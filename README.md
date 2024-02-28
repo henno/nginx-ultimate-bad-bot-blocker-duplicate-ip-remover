@@ -1,6 +1,6 @@
 # nginx-ultimate-bad-bot-blocker-duplicate-ip-remover
 
-This is a Python script solves the problem that after installing https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker, Nginx logs are filled with 
+This Python script solves the issue that when installing the Nginx Ultimate Bad Bot Blocker from https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker, the following warnings are flooding the logs:
 
 ```
 [warn] 28495#28495: duplicate network "138.199.57.151", value: "O", old value: "1" in /etc/nginx/conf.d/globalblacklist.conf:18898
