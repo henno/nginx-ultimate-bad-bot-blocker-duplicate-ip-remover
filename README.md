@@ -13,7 +13,7 @@ This Python script solves the issue that when installing the Nginx Ultimate Bad 
 ## Instructions
 
 Put `weedOutDuplicateIPs.py` in the same directory as `update-ngxblocker` script. 
-Open `update-ngxblocker` script and find the line overwrites globalblacklist.conf with the new version and invoke the weedOutDuplicateIPs.py script after that. It should look like this:
+Open `update-ngxblocker` script and find the line that overwrites globalblacklist.conf with the new version and invoke the weedOutDuplicateIPs.py script after that. It should look like this:
 ```
        case "$retval" in
              0) print_message "$dl_msg...${BOLDGREEN}[OK]${RESET}\n\n"
@@ -26,7 +26,7 @@ Open `update-ngxblocker` script and find the line overwrites globalblacklist.con
         esac
 ```
 
-Then run `update-ngxblocker` script to test if it works.
+Grep /etc/nginx/conf.d/globalblacklist.conf for IPs mentioned in the logs. You should see 2 hits (first with "1" and the second with "0" at the end of the line). Now run `update-ngxblocker` script and repeat grep. You should now see only one hit (the last one with the "0").
 
 Related issue: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/issues/548.
 
